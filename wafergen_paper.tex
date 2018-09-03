@@ -1,0 +1,136 @@
+%% LyX 1.6.5 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[english]{article}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage[letterpaper]{geometry}
+\geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
+\usepackage{amstext}
+\usepackage[authoryear]{natbib}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% New commands
+\newcommand{\tgf}{TGF-$\beta$}
+
+\makeatletter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
+\newcommand{\lyxaddress}[1]{
+\par {\raggedright #1
+\vspace{1.4em}
+\noindent\par}
+}
+\newenvironment{lyxlist}[1]
+{\begin{list}{}
+{\settowidth{\labelwidth}{#1}
+ \setlength{\leftmargin}{\labelwidth}
+ \addtolength{\leftmargin}{\labelsep}
+ \renewcommand{\makelabel}[1]{##1\hfil}}}
+{\end{list}}
+
+\makeatother
+
+\usepackage{babel}
+
+\begin{document}
+
+\title{Temperol dynamics of neonatal, senescent and adult fibroblasts gene response to \tgf{}}
+
+
+\author{John Smith$^{\text{}1}$, Joann Smith$^{\text{}2}$, Peter Parker$^{\text{}2}$,
+Lois Lane$^{\text{}3,*}$}
+
+\maketitle
+
+\lyxaddress{1. Address and Affiliation.\\
+2. Address and Affiliation.\\
+3. Address and Affiliation.}
+
+
+\lyxaddress{{*} Corresponding Author: Lois Lane, contact information.}
+\begin{lyxlist}{00.00.0000}
+\item [{Subject~categories:}] Cell Cycle, Bioinformatics, Proteins
+\item [{Keywords:}] template, sample, latex
+\item [{Running~Title:}] EMBO/MSB latex template
+\item [{character~count~(including~spaces):}] ?
+\end{lyxlist}
+\newpage{}
+
+
+\section*{Abstract}
+
+
+\paragraph*{This should be a single paragraph not exceeding 175 words. The Abstract
+should be comprehensible to readers before they have read the paper,
+and abbreviations should be avoided. Reference citations within the
+abstract are not permitted.}
+
+\newpage{}
+
+
+\section*{Introduction}
+\cite{Baba2006}
+%%% Instructions from MSB
+%The Introduction should be succinct and provide only the necessary
+%background information, rather than a comprehensive review of the
+%specific field. It should not contain subheadings.
+
+
+\section*{Results}
+
+In articles, each section should be divided by subheadings and may
+be combined into one section if appropriate. Citations should be formatted
+in the Author-Year style using the natbib latex package. A bibtex
+style file is supplied with this template, and should be used. Here
+are some sample citations (\citealp{Bailey2006,Elgar2008b,Gill1991,Gregory2005,Hufton2009,Kikuta2007,Mishra2006,Ohno1970,Straehle2008a,Tate2005,Woolfe2007a,Gregory2005a,Baba2006,Lemberger2010,Sneppen2008}). 
+
+
+\section*{Discussion}
+
+Results and Discussion sections should be combined in the Report format. 
+
+
+\section*{Materials and methods}
+
+This section should contain sufficient detail so that all experimental
+procedures can be repeated by others, in conjunction with cited references.
+Authors should also provide clear and complete descriptions of the
+metrics applied for quality assessment and validation of their datasets
+and the computational tools used for data analysis. Molecular Systems
+Biology encourages detailed descriptions of methodology or additional
+materials to be included as Supplementary information. This information
+should, however, not be of immediate importance for the understanding
+of the manuscript.
+
+
+\section*{Acknowledgements}
+
+Personal acknowledgements should precede those of institutions or
+agencies.
+
+
+\section*{Author Contributions}
+
+Please briefly describe each author's role in this work. 
+
+
+\section*{Figure Legends}
+
+Please supply your Figure images and Tables separately through the
+journal's article submission system, but please include the figure
+legends here, in the main text file.
+
+
+\paragraph*{Figure~1 }
+
+Figure Title. Description. 
+
+
+\paragraph*{Figure~2 }
+
+Figure Title. Description. 
+
+\bibliographystyle{msb}
+\bibliography{sample}
+
+\end{document}

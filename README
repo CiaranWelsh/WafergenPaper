@@ -1,0 +1,21 @@
+README for the Molecular Systems Biology Latex template files
+------------------------------------------------------
+Andrew L. Hufton (andrew.hufton@embo.org)
+Nov. 2010
+
+Version 0.1
+
+These files are provided to assist authors using LaTeX in preparing manuscripts for submission to Molecular Systems Biology.  Please contact Andrew Hufton (andrew.hufton@embo.org) if you have questions or find any bugs.
+
+Files
+------
+msb_template.lyx  -  a starting template for LyX users
+msb_template.tex  -  a LaTeX template
+msb_template.pdf  -  a sample pdf generated from msb_template.tex
+msb.bst           -  the Molecular Systems Biology citation style
+sample.bib        -  some sample references
+
+
+Use Notes
+-----------
+The msb.bst style should generate properly formatted references for articles, books, and book chapters, but not all of the other publication types have been rigorously tested.
