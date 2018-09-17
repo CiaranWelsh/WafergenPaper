@@ -8,11 +8,7 @@ In each folder:
 Between Groups
 --------------
 	
-Between groups is where adult and senescent are both compared with neonatal cell lines. 
-All possible combinations of this are performed (i.e. cell line G with A, B and C). 
-These were conducted independently and then the percentage of times gene g was less than the desired significance 
-level was calculated and plotted in the bar graphs. Both the control and treated time series were compared for 
-both the adult and senescent cell lines. 
+Between groups is where adult and senescent are both compared with neonatal cell lines. All possible combinations of this are performed (i.e. cell line G with A, B and C. There were conducted independently and then the percentage of times gene g was less than the desired significance level was calculated and plotted in the bar graphs. Both the control and treated time series were compared for both the adult and senescent cell lines. 
 
 
 Within Groups

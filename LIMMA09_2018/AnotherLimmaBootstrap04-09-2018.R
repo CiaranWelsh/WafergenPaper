@@ -11,6 +11,7 @@ library(combinat)
 ##    2) Is the gene g response different in adult/senescent compared to neonatal cell lines? - Compare Control groups for cell lines 
 ##    3) Is the gene g response to TGFb different in adult/senescent compared to neonatal cell lines? - Compare treated groups for cell lines
 
+
 ## normalize for the reference genes. 
 calc_dct2 = function(df){
   df = data.frame(t(df))
@@ -218,12 +219,24 @@ calculate_percentages_within_groups = function(l, pval=0.05) {
 ##############################
 ##  main section
 
-PVAL = 0.01
+## set some printing options
+options(scipen = 999)
 
 ## sort out directories. Change the below directory variable to appropriate location on your computer
 directory = '/home/b3053674/Documents/LargeStudy/LIMMA09-2018'
 saved_objects_path = file.path(directory, 'SavedObjects')
 raw_data_file = file.path(saved_objects_path, 'FullDataFrameRawCT_16_003_2018.csv')
+
+## read desired pval from settings file
+pval_path = file.path(directory, 'pval')
+PVAL = read.csv(pval_path, header = F)$V1
+
+pval_dir = file.path(saved_objects_path, paste0('pval_less_than_', gsub('\\.', '_', as.character(PVAL))  ) )
+
+pval_dir
+dir.create(pval_dir, showWarnings = FALSE)
+
+# PVAL = 0.0001
 
 ## read data
 df = read.csv(raw_data_file)
@@ -273,12 +286,12 @@ between_tgfb = limma_combinations_between_groups(dct, treatment='TGFb')
 
 write.csv(
   do.call(cbind, calculate_percentages_between_groups(between_control, pval = PVAL)), 
-  file.path(saved_objects_path, 'between_control_statistics.csv')
+  file.path(pval_dir, 'between_control_statistics.csv')
 )
 
 write.csv(
   do.call(cbind, calculate_percentages_between_groups(between_tgfb, pval = PVAL)), 
-  file.path(saved_objects_path, 'between_tgfb_statistics.csv')
+  file.path(pval_dir, 'between_tgfb_statistics.csv')
 )
 
 
@@ -303,17 +316,17 @@ do.call(cbind, calculate_percentages_within_groups(adult, pval = PVAL))
 
 write.csv(
   do.call(cbind, calculate_percentages_within_groups(neo, pval = PVAL)), 
-  file.path(saved_objects_path, 'within_neonatal.csv')
+  file.path(pval_dir, 'within_neonatal.csv')
 )
 
 write.csv(
   do.call(cbind, calculate_percentages_within_groups(adult, pval = PVAL)), 
-  file.path(saved_objects_path, 'within_adult.csv')
+  file.path(pval_dir, 'within_adult.csv')
 )
 
 write.csv(
   do.call(cbind, calculate_percentages_within_groups(sen, pval = PVAL)), 
-  file.path(saved_objects_path, 'within_senescent.csv')
+  file.path(pval_dir, 'within_senescent.csv')
 )
 
 

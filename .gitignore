@@ -102,3 +102,13 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+
+*.bbl
+*.out
+*.log
+*.blg
+*.synctex.gz
+*.synctex(busy)
+*.aux
+Farage2017Textbook-of-Aging-Skin.pdf
