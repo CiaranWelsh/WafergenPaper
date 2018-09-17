@@ -112,3 +112,4 @@ venv.bak/
 *.synctex(busy)
 *.aux
 Farage2017Textbook-of-Aging-Skin.pdf
+*.bak

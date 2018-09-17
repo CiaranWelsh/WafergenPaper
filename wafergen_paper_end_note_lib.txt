@@ -339,6 +339,20 @@ https://arthritis-research.biomedcentral.com/track/pdf/10.1186/s13075-017-1356-3
    type = {Journal Article}
 }
 
+@article{RN70,
+   author = {Marthandan, S. and Baumgart, M. and Priebe, S. and Groth, M. and Schaer, J. and Kaether, C. and Guthke, R. and Cellerino, A. and Platzer, M. and Diekmann, S. and Hemmerich, P.},
+   title = {Conserved Senescence Associated Genes and Pathways in Primary Human Fibroblasts Detected by RNA-Seq},
+   journal = {PLOS ONE},
+   volume = {11},
+   number = {5},
+   pages = {e0154531},
+   DOI = {10.1371/journal.pone.0154531},
+   url = {https://doi.org/10.1371/journal.pone.0154531
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4854426/pdf/pone.0154531.pdf},
+   year = {2016},
+   type = {Journal Article}
+}
+
 @article{RN55,
    author = {Nakao, A. and Afrakhte, M. and Moren, A. and Nakayama, T. and Christian, J. L. and Heuchel, R. and Itoh, S. and Kawabata, M. and Heldin, N. E. and Heldin, C. H. and ten Dijke, P.},
    title = {Identification of Smad7, a TGFbeta-inducible antagonist of TGF-beta signalling},
@@ -434,6 +448,7 @@ http://www.jbc.org/content/266/21/14064.full.pdf},
    number = {1},
    pages = {80-83},
    ISSN = {0923-1811},
+   url = {https://ac.els-cdn.com/S0923181116300597/1-s2.0-S0923181116300597-main.pdf?_tid=33863cae-77a6-4e80-9e81-f544e7adf8f1&acdnat=1537175972_2978112411f54896a35ebb6d7d05782d},
    year = {2016},
    type = {Journal Article}
 }
@@ -449,6 +464,20 @@ http://www.jbc.org/content/266/21/14064.full.pdf},
    DOI = {10.1111/bjd.15379},
    url = {https://onlinelibrary.wiley.com/doi/pdf/10.1111/bjd.15379},
    year = {2017},
+   type = {Journal Article}
+}
+
+@article{RN69,
+   author = {Qin, Zhaoping and Xia, Wei and Fisher, Gary J. and Voorhees, John J. and Quan, Taihao},
+   title = {YAP/TAZ regulates TGF-β/Smad3 signaling by induction of Smad7 via AP-1 in human skin dermal fibroblasts},
+   journal = {Cell Communication and Signaling : CCS},
+   volume = {16},
+   pages = {18},
+   ISSN = {1478-811X},
+   DOI = {10.1186/s12964-018-0232-3},
+   url = {http://www.ncbi.nlm.nih.gov/pmc/articles/PMC5918965/
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5918965/pdf/12964_2018_Article_232.pdf},
+   year = {2018},
    type = {Journal Article}
 }
 
