@@ -123,6 +123,7 @@ https://watermark.silverchair.com/gnw003.pdf?token=AQECAHi208BE49Ooan9kkhW_Ercy7
    pages = {207-23},
    ISSN = {0531-5565 (Print)
 0531-5565},
+   url = {https://ac.els-cdn.com/0531556595020101/1-s2.0-0531556595020101-main.pdf?_tid=4a500c93-74c5-44db-ad61-2aaec3cd9ac5&acdnat=1537223880_a23439270b4ef9ee3f8d3b2fefa61e23},
    year = {1996},
    type = {Journal Article}
 }
@@ -178,6 +179,20 @@ https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2631323/pdf/JPATH174000101.pdf},
    type = {Journal Article}
 }
 
+@article{RN71,
+   author = {Fisher, G. J. and Varani, J. and Voorhees, J. J.},
+   title = {Looking older: fibroblast collapse and therapeutic implications},
+   journal = {Arch Dermatol},
+   volume = {144},
+   number = {5},
+   pages = {666-72},
+   ISSN = {0003-987x},
+   DOI = {10.1001/archderm.144.5.666},
+   url = {https://jamanetwork.com/journals/jamadermatology/articlepdf/419693/dsa70003_666_672.pdf},
+   year = {2008},
+   type = {Journal Article}
+}
+
 @article{RN58,
    author = {Hanyu, A. and Ishidou, Y. and Ebisawa, T. and Shimanuki, T. and Imamura, T. and Miyazono, K.},
    title = {The N domain of Smad7 is essential for specific inhibition of transforming growth factor-beta signaling},
@@ -205,6 +220,19 @@ https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2631323/pdf/JPATH174000101.pdf},
    url = {http://www.sciencedirect.com/science/article/pii/S0092867400803037
 https://ac.els-cdn.com/S0092867400803037/1-s2.0-S0092867400803037-main.pdf?_tid=8ad9930f-b97a-459d-b181-1c1842f87bb6&acdnat=1536928633_71f3cda72c5ee44168f832867579ad4e},
    year = {1997},
+   type = {Journal Article}
+}
+
+@article{RN72,
+   author = {Ignotz, R A and Massagué, J},
+   title = {Transforming growth factor-beta stimulates the expression of fibronectin and collagen and their incorporation into the extracellular matrix},
+   journal = {Journal of Biological Chemistry},
+   volume = {261},
+   number = {9},
+   pages = {4337-4345},
+   url = {http://www.jbc.org/content/261/9/4337.abstract
+http://www.jbc.org/content/261/9/4337.full.pdf},
+   year = {1986},
    type = {Journal Article}
 }
 
@@ -249,6 +277,21 @@ https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5732407/pdf/fpubh-05-00335.pdf},
    DOI = {10.1074/jbc.M210855200},
    url = {http://www.jbc.org/content/278/22/20133.full.pdf},
    year = {2003},
+   type = {Journal Article}
+}
+
+@article{RN73,
+   author = {Kuang, P. P. and Zhang, X. H. and Rich, C. B. and Foster, J. A. and Subramanian, M. and Goldstein, R. H.},
+   title = {Activation of elastin transcription by transforming growth factor-beta in human lung fibroblasts},
+   journal = {Am J Physiol Lung Cell Mol Physiol},
+   volume = {292},
+   number = {4},
+   pages = {L944-52},
+   ISSN = {1040-0605 (Print)
+1040-0605},
+   DOI = {10.1152/ajplung.00184.2006},
+   url = {https://www.physiology.org/doi/pdf/10.1152/ajplung.00184.2006},
+   year = {2007},
    type = {Journal Article}
 }
 
@@ -533,20 +576,6 @@ https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5918965/pdf/12964_2018_Article_232.
 0002-9440},
    url = {https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1618600/pdf/JPATH165000741.pdf},
    year = {2004},
-   type = {Journal Article}
-}
-
-@article{RN9,
-   author = {Quan, T. and Little, E. and Quan, H. and Qin, Z. and Voorhees, J. J. and Fisher, G. J.},
-   title = {Elevated matrix metalloproteinases and collagen fragmentation in photodamaged human skin: impact of altered extracellular matrix microenvironment on dermal fibroblast function},
-   journal = {J Invest Dermatol},
-   volume = {133},
-   number = {5},
-   pages = {1362-6},
-   ISSN = {0022-202x},
-   DOI = {10.1038/jid.2012.509},
-   url = {https://ac.els-cdn.com/S0022202X15362370/1-s2.0-S0022202X15362370-main.pdf?_tid=7d192b1f-a374-492b-8530-b270b47a9d66&acdnat=1535983065_990fc2b12f1d43f86ae30476013ddc14},
-   year = {2013},
    type = {Journal Article}
 }
 
@@ -907,6 +936,7 @@ https://ac.els-cdn.com/S1087002415305050/1-s2.0-S1087002415305050-main.pdf?_tid=
    pages = {382-92},
    ISSN = {0021-9258},
    DOI = {10.1074/jbc.M115.694281},
+   url = {https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4697173/pdf/zbc382.pdf},
    year = {2016},
    type = {Journal Article}
 }
