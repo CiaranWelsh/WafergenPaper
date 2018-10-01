@@ -223,6 +223,19 @@ https://ac.els-cdn.com/S0092867400803037/1-s2.0-S0092867400803037-main.pdf?_tid=
    type = {Journal Article}
 }
 
+@article{RN74,
+   author = {Hinz, Boris},
+   title = {The extracellular matrix and transforming growth factor-β1: Tale of a strained relationship},
+   journal = {Matrix Biology},
+   volume = {47},
+   pages = {54-65},
+   ISSN = {0945-053X},
+   DOI = {https://doi.org/10.1016/j.matbio.2015.05.006},
+   url = {http://www.sciencedirect.com/science/article/pii/S0945053X15001055},
+   year = {2015},
+   type = {Journal Article}
+}
+
 @article{RN72,
    author = {Ignotz, R A and Massagué, J},
    title = {Transforming growth factor-beta stimulates the expression of fibronectin and collagen and their incorporation into the extracellular matrix},
@@ -868,6 +881,21 @@ https://ac.els-cdn.com/S1087002415305050/1-s2.0-S1087002415305050-main.pdf?_tid=
    DOI = {10.1016/j.yexcr.2005.03.022},
    url = {https://ac.els-cdn.com/S0014482705001473/1-s2.0-S0014482705001473-main.pdf?_tid=e32639d7-0043-4524-b5ae-c788bc8f2d4b&acdnat=1536915736_3d1b2e23cfadc0faccaf00f5dc0f6eb2},
    year = {2005},
+   type = {Journal Article}
+}
+
+@article{RN75,
+   author = {Watt, Fiona M. and Fujiwara, Hironobu},
+   title = {Cell-Extracellular Matrix Interactions in Normal and Diseased Skin},
+   journal = {Cold Spring Harbor Perspectives in Biology},
+   volume = {3},
+   number = {4},
+   pages = {a005124},
+   ISSN = {1943-0264},
+   DOI = {10.1101/cshperspect.a005124},
+   url = {http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3062212/
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3062212/pdf/cshperspect-ECM-a005124.pdf},
+   year = {2011},
    type = {Journal Article}
 }
 

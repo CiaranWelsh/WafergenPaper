@@ -18,7 +18,7 @@
 \usepackage{siunitx}
 %\usepackage[authoryear]{natbib}
 \usepackage{natbib}
-\setcitestyle{authoryear}
+%\setcitestyle{authoryear}
 \usepackage{graphicx}
 \usepackage[figurename=Figure]{caption}
 \usepackage{subcaption}
@@ -123,14 +123,49 @@ In this study, we have conducted a high throughout qPCR experiment designed to s
 \end{figure}
 \subsection{Experiment design}
 To identify differences between neonatal, irradiation-induced senescent and adult fibroblasts, the activity of 72 genes were measured over 96h in 3 replicates of each cell group using high throughput qPCR. These measurements were taken both in response to 5ng mL$^{-1}$ \tgf{} reconstituted in 10mM citric acid or 0.1\% BSA in 10mM citric acid as a negative control. The gene chosen were manually selected based on a literature search to be relevant to ECM biology or \tgf{} signalling. The experimental design is depicted in (\cref{fig:exp_design}).
-
+%
 \begin{figure}[t]
 	\centering
 	\includegraphics[width=\textwidth]{img/qc/cell_line}
 	\caption{Scatter matrix of first three principle components coloured by cell line. Kernel density plots along the diagonal represent the distribution of the relevant principle component.}
 	\label{fig:qc:cell_line}
 \end{figure}
+%
+\begin{figure}
+	\begin{subfigure}{0.45\linewidth}
+		\includegraphics[width=\linewidth]{LIMMA09_2018/SavedObjects/between_pvalue_counts}
+		\caption{Between cell lines}
+		\label{fig:pvalues:between}
+	\end{subfigure}
+	\begin{subfigure}{0.45\linewidth}
+		\includegraphics[width=\linewidth]{LIMMA09_2018/SavedObjects/within_pvalue_counts}
+		\caption{Within cell lines}
+		\label{fig:pvalues:within}
+	\end{subfigure}
+	\caption{Counts of genes that were differentially expressed in >60\% of LIMMA analyses as a function of p-value for (a) the between groups and (b) within groups comparisons.}
+	\label{fig:pvalues}
+\end{figure}
+%
+\subsection{Principle component analysis}
+Three primers (IL1A, IL1B and FOSB) were either unreliable or complementary to transcripts present at undetectable quantities and were excluded from further analysis. As a first step in data analysis a principal component analysis (PCA) was conducted to gain confidence in the measurements. The PCA was conducted so each point on the PCA represents one of the 1296 samples. On a PCA, high dimensional data is reduced to a lower dimension whilst maintaining as much of the original variance as possible (ref). Therefore, when two points are close together on the PCA, the underlying data are similar while when two points are distant, the underlying data are very different from one another. By monitoring how the PCA clusters, it is possible to both positively and negatively assess the quality of the experiment. 
 
+To highlight how experimental factors affect PCA clustering, the PCA repeated and visualised 5 times, but coloured by the various experimental factors. These include cell line (\cref{fig:qc:cell_line}), cell ID (\cref{fig:qc:cell_id}), time points (\cref{fig:qc:time_point}), treatment (\cref{fig:qc:treatment}) and by biological replicates (\cref{fig:qc:replicate}). Because the PCA coloured by cell lines, cell IDs, time points and treatments all display clustering while the PCA coloured by replicates does not, this PCA indicates that the data collected is likely representative of the underlying biology. As an alternative interpretation, the PCA shows that is it unlikely that the experiment contains anomalies that confound our understanding of the underlying biology. A scree plot is presented in \cref{fig:qc:scree} and indicates that the first three principal components account for >80\% of variance.
+
+\subsection{Differential expression}
+Following the PCA, a differential expression analysis was conducted to investigate whether the time series measurements for each gene was statistically different between` or within cell line groups. The R package LIMMA was used for differential expression analysis. Because our data is dynamic, for each comparison LIMMA was configured to evaluate whether two full time series objects were different from one other using a moderated F-statistic \citep{Ritchie2015, Smyth2004, Smyth2005}. 
+\begin{table}[h]
+	\centering
+	\caption{Table summarising the number of genes per comparison that were differentially expressed with a (FDR corrected) p-value <0.001 in over 60\% of LIMMA analyses per comparison.}
+	\begin{tabular}{lll}
+		Comparison & Control & \tgf{} \\
+		Adult Vs neonatal & 16 & 46 \\
+		Senescent Vs neonatal & 16 & 30 \\
+		Neonatal Vs neonatal & 7 & 28 \\
+		Adult Vs adult & 17 & 37 \\
+		Senescent Vs senescent & 10 & 25
+	\end{tabular}
+	\label{table:stats_summary}
+\end{table}
 \begin{figure}
 	\centering
 	\begin{subfigure}{0.45\linewidth}
@@ -147,21 +182,7 @@ To identify differences between neonatal, irradiation-induced senescent and adul
 	\caption{Differential expression analysis for (a) between groups comparisons and (b) within groups comparisons. Colours indicate the percentage of the time of all combinations (9 for between groups and 3 for within groups) of LIMMA analysis conducted that a time series was differentially expressed with a FDR corrected p-value >0.001. }
 	\label{fig:heatmap}
 \end{figure}
-
-\begin{table}
-	\centering
-	\caption{Table summarising the number of genes per comparison that were differentially expressed with a (FDR corrected) p-value <0.001 in over 60\% of LIMMA analyses per comparison.}
-	\begin{tabular}{lll}
-		Comparison & Control & \tgf{} \\
-		Adult Vs neonatal & 16 & 46 \\
-		Senescent Vs neonatal & 16 & 30 \\
-		Neonatal Vs neonatal & 7 & 28 \\
-		Adult Vs adult & 17 & 37 \\
-		Senescent Vs senescent & 10 & 25
-	\end{tabular}
-	\label{table:stats_summary}
-\end{table}
-
+%
 \begin{figure}[p]
 	\captionsetup[subfigure]{justification=centering}
 	\begin{minipage}{0.9\textwidth}
@@ -208,15 +229,6 @@ To identify differences between neonatal, irradiation-induced senescent and adul
 	\caption{Bar graphs showing control (C) and \tgf{} (T) treated time series datasets for each cell line (labelled A-I as described in the methods). Error bars represent standard error of the mean and each conditions was repeated 6 times.}
 	\label{fig:bar_graphs}
 \end{figure}
-%
-\subsection{Principle component analysis}
-Three primers (IL1A, IL1B and FOSB) were either unreliable or complementary to transcripts present at undetectable quantities and were excluded from further analysis. As a first step in data analysis a principal component analysis (PCA) was conducted to gain confidence in the measurements. The PCA was conducted so each point on the PCA represents one of the 1296 samples. On a PCA, high dimensional data is reduced to a lower dimension whilst maintaining as much of the original variance as possible (ref). Therefore, when two points are close together on the PCA, the underlying data are similar while when two points are distant, the underlying data are very different from one another. By monitoring how the PCA clusters, it is possible to both positively and negatively assess the quality of the experiment. 
-
-To highlight how experimental factors affect PCA clustering, the PCA repeated and visualised 5 times, but coloured by the various experimental factors. These include cell line (\cref{fig:qc:cell_line}), cell ID (\cref{fig:qc:cell_id}), time points (\cref{fig:qc:time_point}), treatment (\cref{fig:qc:treatment}) and by biological replicates (\cref{fig:qc:replicate}). Because the PCA coloured by cell lines, cell IDs, time points and treatments all display clustering while the PCA coloured by replicates does not, this PCA indicates that the data collected is likely representative of the underlying biology. As an alternative interpretation, the PCA shows that is it unlikely that the experiment contains anomalies that confound our understanding of the underlying biology. A scree plot is presented in \cref{fig:qc:scree} and indicates that the first three principal components account for >80\% of variance.
-
-\subsection{Differential expression}
-Following the PCA, a differential expression analysis was conducted to investigate whether the time series measurements for each gene was statistically different between` or within cell line groups. The R package LIMMA was used for differential expression analysis. Because our data is dynamic, for each comparison LIMMA was configured to evaluate whether two full time series objects were different from one other using a moderated F-statistic \citep{Ritchie2015, Smyth2004, Smyth2005}. 
-
 Since we have data from 3 cell lines per cell line group, we made use of the available data by repeating the LIMMA analysis for all combinations of cell line under a comparison. A total of 10 differential expression analyses were conducted, 5 each to compare \tgf{} or negative control time series, two of which were `between' groups comparisons and three `within' groups comparisons. The output from LIMMA is a list of FDR-corrected p-values representing the probability that two groups are equal. Usually, a p-value threshold is chosen and any gene with a p-value lower than that threshold is considered differentially expressed. Since we have 9 equivalent LIMMA analyses for the `between groups` analysis and 3 for the `within groups' analysis, a consensus strategy was used where if a gene was considered differentially expressed in >60\% of LIMMA analyses, the gene was considered differentially expressed. To investigate the impact of choosing different p-values, the numbers of differentially expressed genes were recorded as a function of p-value and are displayed in \cref{fig:pvalues}. For all p-values, the comparison between adult and neonatal cell lines treated with \tgf{} contained the most differentially expressed genes (\cref{fig:pvalues:between}). Similarly, in all cases the comparison within the adult group treated with \tgf{} contained the second largest group of differentially expressed genes while the comparison within the control neonatal cell lines contained the least (\cref{fig:pvalues:within}). Given that these interpretations are the same for the different p-values, a FDR-adjusted p-value of 0.001 was considered a reasonable balance between too strict and too lenient. A detailed summary of the differential expression analysis is presented in \cref{fig:heatmap} using a p-value threshold of 0.001 while the number of genes that were differentially expressed in >60\% of LIMMA analyses were counted and displayed in \cref{table:stats_summary}.
 
 \subsection{Dynamic gene expression profiles}
@@ -231,9 +243,11 @@ MMP1 production diminished over time in all 9 cell lines and in both the control
 Smad7, Smad3 and JunB are all signalling components of the \tgf{} network. Smad7 was present in small quantities in the control cell lines and \tgf{} treatment quickly and transiently induced Smad7 transcription in all cell lines (\cref{SMAD7}). The peak magnitude was similar between senescent and neonatal cell lines but blunted in adult cell lines. Smad3 was similarly unaffected by the control treatment but a reduction in the amount of Smad3 mRNA declined between 8h and 24h after \tgf{} stimulation (\cref{SMAD3}). The dynamics of the JunB profile are similar to Smad7, with a transient spike occurring 2h post \tgf{} stimulation, but not in the control time series (\cref{JUNB}). The amount of \tgf{} induced JunB is diminished in adult compared to neonatal cell lines. 
 
 \section{Discussion}
-In aged skin, the composition of the dermal ECM changes resulting in thinner, weaker and less elastic skin \citep{Farage2009}. While it is known that the composition of an aged dermis is differs from young tissue, much is still unknown regarding how they differ. To gain a better understanding of what differences exist between young and old skin, we conducted a high throughput qPCR experiment to measure the activity of 72 genes over time in neonatal, adult and irradiation-induced senescent fibroblasts. Since \tgf{} is a key mediator positively regulating ECM homeostasis, we treated fibroblasts with \tgf{} or a negative control to observe how the different cell lines respond. 
+In aged skin, the composition of the dermal ECM changes resulting in thinner, weaker and less elastic skin \citep{Farage2009}. While it is known that the composition of an aged dermis is differs from young tissue, much is still unknown regarding how they differ. To gain a better understanding of what differences exist between young and old skin, we conducted a high throughput qPCR experiment to measure the activity of 72 genes over time in neonatal, adult and irradiation-induced senescent fibroblasts. Since \tgf{} is a key mediator positively regulating ECM homeostasis \citep{Hinz2015}, we treated fibroblasts with \tgf{} and a negative control to observe how the different cell lines respond. 
 
-The PCA and the differential expression analysis conducted in this study represent two different means of extracting information from this dataset. The PCA provides a broad overview of the data and clearly shows the measured genes respond differently in the different cell lines (\cref{fig:qc:cell_line}. On the other hand, the differential expression analysis provides a detailed indication of which genes behave differently in the compared groups. Notably, of all the comparisons made, the group containing the most differentially expressed genes was the comparison between \tgf{} treated adult and neonatal fibroblasts (\cref{fig:between:heatmap,fig:pvalues:between}). The group with the second largest number of differentially expressed genes was the comparison within \tgf{} treated adult cell lines. Conversely, the group with the least number of differentially expressed genes was within the neonatal control groups (\cref{fig:within:heatmap, fig:pvalues:within}). The latter two findings are intuitive results because it is known that heterogeneity increases with age (ref). It is however interesting to note that in all comparisons, the \tgf{} treated groups displayed greater levels differential expression than the control groups (\cref{fig:heatmap, fig:pvalues}). 
+The PCA and the differential expression analysis conducted in this study represent two different means of extracting information from this dataset. The PCA provides a broad overview of the data and clearly shows the response to \tgf{} is considerably different between cell line groups (\cref{fig:qc:cell_line}). The differential expression analysis on the other hand, provides a detailed indication of which genes are different between groups. A notable observation is that in all comparisons between and within cell lines, the \tgf{} treated time series always contained more differentially expressed genes than the control group. This finding may ... <note for daryl: what is the interpretation here? Is this result to be expected. Is it biologically significant?>. 
+
+The comparison between the \tgf{} treated adult and neonatal cell lines had the most differentially expressed genes (\cref{fig:between:heatmap,fig:pvalues:between}). This provides strong support for the contention that old fibroblasts behave differently from young. The comparison within the \tgf{} treated adult cell line group was the second largest number of differentially expressed genes, while the comparison within the control treated neonatal cell lines had the least numbers of differentially expressed genes (\cref{fig:within:heatmap,fig:pvalues:within}). These two findings are intuitive results because it is known that heterogeneity increases with age (\cite{Watt2011}). 
 
 In \cref{fig:bar_graphs}, we have selected a subset of the measured genes for discussion. Our measurements for type 1 collagen agree with previous reports that type 1 collagen is reduced with age. \cite{Varani2006} found that type 1 procollagen levels were 3 times lower in aged (80+) compared to young (18-29) individuals (15ng/mm$^2$ compared to 5ng/mm$^2$ respectively). Moreover, data presented in \cite{Quan2010} agrees with this assessment. \cref{COL1A1, COL1A2} shows that our data agree with these reports that \tgf{} strongly induces the production of collagen from fibroblasts and that the amount produced is reduced in age. It is interesting to note that the amount of COL1A1 produced is approximately double that of COL1A2, in line with the knowledge that the stoichiometry for type 1 collagen heterotrimers two COL1A1 to one COL1A2 chain (ref). 
 
@@ -298,9 +312,9 @@ You may be asked to provide a conflict of interest statement during the submissi
 \section{Supplementary Figures}
 \subsection{Principle Component Analysis}
 
-\begin{figure}
+\begin{figure}[b]
 	\centering
-	\includegraphics[height=0.45\textheight]{img/qc/pca_scree}
+	\includegraphics[height=0.35\textheight]{img/qc/pca_scree}
 	\caption{Plot showing the percent of variance explained for the first 10 principal components.}
 	\label{fig:qc:scree}
 \end{figure}
@@ -332,22 +346,6 @@ You may be asked to provide a conflict of interest statement during the submissi
 	\caption{Scatter matrix of first three principle components coloured by replicate.}
 	\label{fig:qc:replicate}
 \end{figure}
-
-\begin{figure}
-	\begin{subfigure}{0.45\linewidth}
-		\includegraphics[width=\linewidth]{LIMMA09_2018/SavedObjects/between_pvalue_counts}
-		\caption{Between cell lines}
-		\label{fig:pvalues:between}
-	\end{subfigure}
-	\begin{subfigure}{0.45\linewidth}
-		\includegraphics[width=\linewidth]{LIMMA09_2018/SavedObjects/within_pvalue_counts}
-		\caption{Within cell lines}
-		\label{fig:pvalues:within}
-	\end{subfigure}
-	\caption{Counts of genes that were differentially expressed in >60\% of LIMMA analyses as a function of p-value for (a) the between groups and (b) within groups comparisons.}
-	\label{fig:pvalues}
-\end{figure}
-
 
 %While 72 genes is by no means a comprehensive accounting of the potential differences between these cell lines, these genes were selected based on their known involvement in ECM and \tgf{} biology. It is clear from the PCA that we have observed marked differences in the behaviour of neonatal, adult and senescent cells \cref{fig:qc:cell_line}. Additionally, the PCA serves to confirm that cells treated with \tgf{} behave differently to those treated with a negative control (\cref{fig:qc:treatment} an that the longer cells are treated, the more different they become, compared to baseline and control samples (\cref{fig:qc:time_point}. Moreover, the PCA does indicate replicate clustering which would be indicative of a confounding factor affecting the results \cref{fig:qc:replicate}.
 
